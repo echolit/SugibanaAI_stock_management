@@ -16,15 +16,16 @@ Developed in collaboration with **Elanus** as an initial pilot customer, this sy
 
 ```mermaid
 graph TD
-    A[Amazon SP‑API Token Refresh] --> B[Define Marketplace Groups (EU / NA / FE)]
-    B --> C[List Orders by Region]
-    C --> D[Merge EU/NA/FE Orders]
-    D --> E[Prepare Orders for Loop]
-    E --> F[Filter Order Status: Unshipped / Shipped / Canceled]
-    F --> G[DecideActions (JS logic)]
-    G --> H[Switch by op: product_adjust / sale_log / amazon_sync / needs_items]
-    H --> I[Update Google Sheets / DB]
-    I --> J[Alerting & Reports]
+  A["Amazon SP-API Token Refresh"] --> B["Define Marketplace Groups (EU / NA / FE)"]
+  B --> C["List Orders by Region"]
+  C --> D["Merge EU / NA / FE Orders"]
+  D --> E["Prepare Orders for Loop"]
+  E --> F{"Filter Order Status<br/>Unshipped | Shipped | Canceled"}
+  F --> G["Decide Actions (JS logic)"]
+  G --> H{"Switch by op<br/>product_adjust | sale_log | amazon_sync | needs_items"}
+  H --> I["Update Google Sheets / DB"]
+  I --> J["Alerting & Reports"]
+
 ```
 
 ### 🔑 Key Components
